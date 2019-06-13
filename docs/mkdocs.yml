@@ -1,0 +1,18 @@
+site_name: dropSeqPipe
+theme: readthedocs
+repo_name: 'GitHub'
+repo_url: https://github.com/Hoohm/dropSeqPipe
+nav:
+  - 'index.md'
+  - 'Installation.md'
+  - 'Reference-Files.md'
+  - 'Create-config-files.md'
+  - 'Running-dropSeqPipe.md'
+  - 'Clusters.md'
+  - 'Plots.md'
+  - 'CHANGELOG.md'
+  - 'FAQ.md'
+
+google_analytics:
+  - 'UA-128943644-1'
+  - 'auto'

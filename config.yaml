@@ -1,0 +1,51 @@
+CONTACT:
+  email: dkotliar@broadinstitute.org
+  person: Dylan Kotliar
+LOCAL:
+    temp-directory: /mnt/disks/seqwell/test/tmp
+    memory: 50g
+    raw_data: /mnt/disks/seqwell/test/data
+    results: /mnt/disks/seqwell/test/results
+META:
+    species:
+        MmulKitwit:
+            build: 8
+            release: 92
+    reference-directory: /mnt/disks/seqwell/test/ref
+    gtf_biotypes: /mnt/disks/seqwell/test/dropSeqPipe-njharlen/templates/gtf_biotypes.yaml
+FILTER:
+    barcode-whitelist: /mnt/disks/seqwell/test/barcode_whitelist.txt
+    5-prime-smart-adapter: AAGCAGTGGTATCAACGCAGAGTGAATGGG
+    cell-barcode:
+        start: 1
+        end: 12
+    UMI-barcode:
+        start: 13
+        end: 20
+    cutadapt:
+        adapters-file: '/mnt/disks/seqwell/test//NexteraPE-SeqWell-PE-fastqc.fa'
+        R1:
+            quality-filter: 20
+            maximum-Ns: 0
+            extra-params: ''
+        R2:
+            quality-filter: 20
+            minimum-adapters-overlap: 6
+            minimum-length: 15
+            extra-params: ''
+MAPPING:
+    STAR:
+        genomeChrBinNbits: 13
+        outFilterMismatchNmax: 10
+        outFilterMismatchNoverLmax: 0.2
+        outFilterMismatchNoverReadLmax: 1
+        outFilterMatchNmin: 0
+        outFilterMatchNminOverLread: 0.6
+        outFilterScoreMinOverLread: 0.66
+EXTRACTION:
+    LOCUS:
+        - CODING
+        - UTR
+    strand-strategy: SENSE
+    UMI-edit-distance: 1
+    minimum-counts-per-UMI: 0

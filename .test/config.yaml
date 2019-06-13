@@ -1,0 +1,53 @@
+CONTACT:
+  email: user.name@provider.com
+  person: John Doe
+LOCAL:
+    temp-directory: /tmp
+    memory: 4g
+    raw_data: data
+    results: results
+META:
+    species:
+        mus_musculus:
+            build: 38
+            release: 91
+    ratio: 0.2
+    reference-directory: data/ref
+    gtf_biotypes: gtf_biotypes.yaml
+
+FILTER:
+    barcode-whitelist: ''
+    5-prime-smart-adapter: CCTACACGACGCTCTTCCGATCT
+    cell-barcode:
+        start: 2
+        end: 6
+    UMI-barcode:
+        start: 7
+        end: 16
+    cutadapt:
+        adapters-file: NexteraPE-PE.fa
+        R1:
+            quality-filter: 20
+            maximum-Ns: 0
+            extra-params: ''
+        R2:
+            quality-filter: 20
+            minimum-adapters-overlap: 6
+            minimum-length: 15
+            extra-params: ''
+MAPPING:
+    STAR:
+        genomeChrBinNbits: 18
+        outFilterMismatchNmax: 10
+        outFilterMismatchNoverLmax: 0.3
+        outFilterMismatchNoverReadLmax: 1
+        outFilterMatchNmin: 0
+        outFilterMatchNminOverLread: 0.66
+        outFilterScoreMinOverLread: 0.66
+EXTRACTION:
+    LOCUS:
+        - CODING
+        - UTR
+    strand-strategy: SENSE
+    UMI-edit-distance: 1
+    minimum-counts-per-UMI: 0

@@ -1,0 +1,22 @@
+__default__:
+    time: "03:00:00"
+    mem: 4g
+    output: "logs/cluster/{rule}.{wildcards.sample}.out"
+    error: "logs/cluster/{rule}.{wildcards.sample}.err"
+    n: '{threads}'
+fastqc_barcodes:
+    jobname: fastqc_barcodes
+    time: "01:00:00"
+    mem: 1g
+fastqc_reads:
+    jobname: fastqc_reads
+    time: "01:00:00"
+    mem: 1g
+STAR_align:
+    n: 24
+create_star_index:
+    n: 24
+    time: "02:00:00"
+    mem: 40g
+    output: "logs/cluster/{rule}.out"
+    error: "logs/cluster/{rule}.err"
