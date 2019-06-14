@@ -3,7 +3,7 @@
 #Which rules will be run on the host computer and not sent to nodes
 localrules:
     multiqc_fastqc_reads,
-    multiqc_fastqc_barcodes
+    multiqc_fastqc_barcodes,
     make_adapter_txt
 
 
