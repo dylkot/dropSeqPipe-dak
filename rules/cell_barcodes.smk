@@ -79,5 +79,6 @@ rule make_unassignedcb_bam:
     output:
         bam='{results_dir}/samples/{sample}/unassignedcbs.bam',
         genericbarcode='{results_dir}/samples/{sample}/genericbarcode.txt'
+    conda: '../envs/merge_bam.yaml'
     script:
         '../scripts/make_unassignedcb_bam.py'
