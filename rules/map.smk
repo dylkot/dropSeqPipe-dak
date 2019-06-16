@@ -97,10 +97,26 @@ rule MergeBamAlignment:
         '../scripts/merge_bam.py'
 
 
+rule clean_bam:
+    input:
+        '{results_dir}/samples/{sample}/Aligned.repaired.bam'
+    output:
+        temp('{results_dir}/samples/{sample}/Aligned.cleaned.bam')
+    threads:1
+    params:
+        picard="$CONDA_PREFIX/share/picard-2.14.1-0/picard.jar",
+        temp_directory=config['LOCAL']['temp-directory']
+    conda: '../envs/picard.yaml'
+    shell:
+        """java -jar -Djava.io.tmpdir={params.temp_directory} {params.picard} CleanSam\
+        INPUT={input}\
+        OUTPUT={output}
+        """
+
 
 rule TagReadWithGeneExon:
     input:
-        data='{results_dir}/samples/{sample}/Aligned.repaired.bam',
+        data='{results_dir}/samples/{sample}/Aligned.cleaned.bam',
         refFlat=expand("{ref_path}/{species}_{build}_{release}/curated_annotation.refFlat",
             ref_path=config['META']['reference-directory'],
             species=species,
