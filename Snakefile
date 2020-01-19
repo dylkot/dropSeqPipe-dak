@@ -170,15 +170,30 @@ elif len(config['META']['species'].keys()) == 1:
                     release=release,
                     species=species)
         
-rule download_meta:
+
+rule generate_meta:
     input:
-        expand(
-            ["{ref_path}/{species}_{build}_{release}/annotation.gtf",
-            "{ref_path}/{species}_{build}_{release}/genome.fa"],
-                ref_path=config['META']['reference-directory'],
-                species=species_list,
-                release=release,
-                build=build)
+        expand(['{ref_path}/{species}_{build}_{release}/STAR_INDEX/SA_{read_length}/SA',
+                "{ref_path}/{species}_{build}_{release}/curated_reduced_annotation.gtf",
+                "{ref_path}/{species}_{build}_{release}/genome.dict",
+                "{ref_path}/{species}_{build}_{release}/curated_annotation.refFlat",
+                "{ref_path}/{species}_{build}_{release}/annotation.rRNA.intervals"],
+                    read_length=read_lengths,
+                    ref_path=config['META']['reference-directory'],
+                    build=build,
+                    release=release,
+                    species=species)
+
+
+#rule download_meta:
+#    input:
+#        expand(
+#            ["{ref_path}/{species}_{build}_{release}/annotation.gtf",
+#            "{ref_path}/{species}_{build}_{release}/genome.fa"],
+#                ref_path=config['META']['reference-directory'],
+#                species=species_list,
+#                release=release,
+#                build=build)
         
 
 
@@ -266,10 +281,10 @@ rule make_report:
     input:
         expand('{results_dir}/reports/publication_text.html', results_dir=results_dir)
 
-if len(config['META']['species'].keys()) == 2:
-    include: "rules/download_meta_mixed.smk"
-if len(config['META']['species'].keys()) == 1:
-    include: "rules/download_meta_single.smk"
+#if len(config['META']['species'].keys()) == 2:
+#    include: "rules/download_meta_mixed.smk"
+#if len(config['META']['species'].keys()) == 1:
+#    include: "rules/download_meta_single.smk"
 
 include: "rules/generate_meta.smk"
 include: "rules/fastqc.smk"

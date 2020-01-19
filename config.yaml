@@ -2,19 +2,19 @@ CONTACT:
   email: dkotliar@broadinstitute.org
   person: Dylan Kotliar
 LOCAL:
-    temp-directory: /mnt/disks/seqwell/test/tmp
+    temp-directory: /home/tmp
     memory: 50g
-    raw_data: /mnt/disks/seqwell/test/data
-    results: /mnt/disks/seqwell/test/results
+    raw_data: /home/data
+    results: /home/results
 META:
     species:
         MmulKitwit:
-            build: 8
-            release: 92
-    reference-directory: /mnt/disks/seqwell/test/ref
-    gtf_biotypes: /mnt/disks/seqwell/test/dropSeqPipe-njharlen/templates/gtf_biotypes.yaml
+            build: 10
+            release: 99
+    reference-directory: /home/ref
+    gtf_biotypes: /home/runDropseqPipeGCP/dropSeqPipe-dak/templates/gtf_biotypes.yaml
 FILTER:
-    barcode-whitelist: /mnt/disks/seqwell/test/barcode_whitelist.txt
+    barcode-whitelist: /home/barcode_whitelist.txt
     5-prime-smart-adapter: AAGCAGTGGTATCAACGCAGAGTGAATGGG
     cell-barcode:
         start: 1
@@ -23,7 +23,7 @@ FILTER:
         start: 13
         end: 20
     cutadapt:
-        adapters-file: '/mnt/disks/seqwell/test//NexteraPE-SeqWell-PE-fastqc.fa'
+        adapters-file: '/home/NexteraPE-SeqWell-PE-fastqc.fa'
         R1:
             quality-filter: 20
             maximum-Ns: 0
