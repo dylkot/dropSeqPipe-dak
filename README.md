@@ -1,7 +1,7 @@
 [![Snakemake](https://img.shields.io/badge/snakemake-≥4.1.0-brightgreen.svg)](https://snakemake.bitbucket.io)
 [![Build Status](https://travis-ci.org/Hoohm/dropSeqPipe.svg?branch=master)](https://travis-ci.org/Hoohm/dropSeqPipe)
 
-Fork of [dropSeqPipe](#https://github.com/Hoohm/dropSeqPipe) created by Patrick Roelli (@Hoohm), Sebastian Mueller (@seb-mueller), and Charles Girardot (@cgirardot) which I used to map single-cell RNA-Seq reads derived from Seq-Well for the paper [Single-Cell Profiling of Ebola Virus Disease In Vivo Reveals Viral and Host Dynamics](#https://www.sciencedirect.com/science/article/pii/S0092867420313088). See the [companion repository](#https://github.com/dylkot/SC-Ebola) for the analysis scripts used to generate the figures in that manuscript
+Fork of [dropSeqPipe](https://github.com/Hoohm/dropSeqPipe) created by Patrick Roelli (@Hoohm), Sebastian Mueller (@seb-mueller), and Charles Girardot (@cgirardot) which I used to map single-cell RNA-Seq reads derived from Seq-Well for the paper [Single-Cell Profiling of Ebola Virus Disease In Vivo Reveals Viral and Host Dynamics](https://www.sciencedirect.com/science/article/pii/S0092867420313088). See the [companion repository](https://github.com/dylkot/SC-Ebola) for the analysis scripts used to generate the figures in that manuscript
 
 Description
 ------------------
